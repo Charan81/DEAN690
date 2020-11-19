@@ -1,0 +1,17 @@
+{
+	"select": {
+		"column": "None",
+		"type": "[]"
+	},
+	"from": {
+		"table": "product"
+	},
+	"join": {
+	},
+	"where": {
+	},
+	"group_by": {
+	},
+	"select": {
+	},
+}
