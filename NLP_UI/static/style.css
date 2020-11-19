@@ -1,0 +1,143 @@
+.container_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 350px;
+  background-color:#D2B48C;
+}
+
+.container {
+
+  overflow-x: auto;
+  overflow-y: visible;
+  width: 500px;
+  height: 438px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#D2B48C;
+  border-color: #003430;
+  border-radius: 5px;
+}
+
+
+.tower-table {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  width: 100%;
+  height: 500px;
+  background-color:#D2B48C;
+  border-color: #003430;
+  border-radius: 5px;
+  }
+  .container tr {
+  height: 5px;
+  }
+  .container thead tr  {
+  height: 10px;
+  
+  border-top: 2px solid #000000;
+  }
+
+
+
+/* Original color:  --c-yellow    */
+.input-group {
+  position: relative;
+  color: var(--c-dark);
+  
+}
+.input {
+  background-color: var(--c-light-tint);
+  width: 400px;
+  height: 50px;
+  border-radius: 100px;
+  border: none;
+  box-shadow: 0 2px 4px var(--c-darker-1);
+  color: inherit;
+  padding: 0 50px;
+  font-family: inherit;
+  transition-property: width, padding, border-raduis;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.input:focus,
+.input:valid {
+  width: 300px;
+  cursor: unset;
+  padding-left: 45px;
+  border-radius: 8px;
+}
+
+.search-icon {
+  fill: currentColor;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  pointer-events: none;
+  opacity: 0.3;
+  transition: opacity 300ms;
+}
+
+.suggestions {
+  background-color: var(--c-light-tint);
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--c--darker);
+  width: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms;
+}
+
+.input:valid ~ .suggestions {
+  max-height: 150px;
+  width: 100%;
+}
+
+.input:valid ~ .search-icon {
+  opacity: 1;
+}
+
+.suggestion {
+  height: 50px;
+  padding: 0 15px;
+  display: flex;
+  flex-flow: row norwap;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid var(--c--darker);
+}
+
+.suggestion__icon {
+  fill: currentColor;
+  width: 20px;
+  margin-right: 15px;
+  opacity: 0.5;
+  transition: opacity 300ms;
+}
+
+.suggestion__title {
+  opacity: 2;
+  transition: color 300ms;
+}
+
+.suggestion__desc {
+  opacity: 1;
+  font-size: 0.8em;
+}
+
+.suggestion:hover .suggestion__title {
+  color: var(--c-cyan-shade);
+}
+
+.suggestion:hover .suggestion__icon {
+  opacity: 1;
+}
+
+

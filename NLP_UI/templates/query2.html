@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>DAEN 690 - Searchbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Rajdhani:400,500&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='https://rawcdn.githack.com/full-stacks/css-hero/00455d27e26917d35108c236deae031ad029cb98/challenges/000-template/fullstacks.css'><link rel="stylesheet" href="/static/style.css" >
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+
+
+<body style="background-color: #D2B48C;">
+    <!-- partial:index.partial.html -->
+
+    <!--<div class="fullstacks light"> -->
+
+        <div style="background-color: #D2B48C;" class="container-fluid">
+          
+          {{ data|safe }}
+        </div>
+
+
+        <!-- code here 
+                <div class="row table-responsive">
+          <div class="tower-table">
+              {{ data|safe }}
+          </div>
+       </div>
+        -->
+
+
+          <!-- 
+          <div class="input-group">
+          {% block content %}
+          <h1>{{name}}</h1>
+          {{data | safe}}
+          {% endblock %}
+
+            <p style="border:3px; border-style:solid; border-color:#f0eee4; padding: 1em;"> 
+              {% for table in tables %}
+                {{titles[loop.index]}}
+                {{ table|safe }}
+              {% endfor %}
+              </p>
+          -->    
+        <!-- Symbols 
+        <svg style="display: none;">
+          <symbol id="search-symbol" viewBox="0 0 20 20">
+                        <path d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896 c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519 c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461 s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z"></path>
+        </symbol>
+        <symbol id="star-symbol" viewBox="0 0 20 20">
+          <path d="M16.85,7.275l-3.967-0.577l-1.773-3.593c-0.208-0.423-0.639-0.69-1.11-0.69s-0.902,0.267-1.11,0.69L7.116,6.699L3.148,7.275c-0.466,0.068-0.854,0.394-1,0.842c-0.145,0.448-0.023,0.941,0.314,1.27l2.871,2.799l-0.677,3.951c-0.08,0.464,0.112,0.934,0.493,1.211c0.217,0.156,0.472,0.236,0.728,0.236c0.197,0,0.396-0.048,0.577-0.143l3.547-1.864l3.548,1.864c0.18,0.095,0.381,0.143,0.576,0.143c0.256,0,0.512-0.08,0.729-0.236c0.381-0.277,0.572-0.747,0.492-1.211l-0.678-3.951l2.871-2.799c0.338-0.329,0.459-0.821,0.314-1.27C17.705,7.669,17.316,7.343,16.85,7.275z M13.336,11.754l0.787,4.591l-4.124-2.167l-4.124,2.167l0.788-4.591L3.326,8.5l4.612-0.67l2.062-4.177l2.062,4.177l4.613,0.67L13.336,11.754z"></path>
+          </symbol>
+        </svg>
+        -->
+        <!-- code here -->
+      </div>
+    </div>
+    <!-- partial -->
+      <script  src="/static/script.js" ></script>
+    
+    </body>
+    </html>
+    
