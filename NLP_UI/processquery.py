@@ -51,7 +51,6 @@ def SqlProcessing(output):
         ##################### Data Frame #######################
 
         df = pd.DataFrame(ans)
-
         ################## Add Column Names #####################
         
         if len(df.columns) == 1:

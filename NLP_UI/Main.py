@@ -28,17 +28,13 @@ def query():
         if result_2 is None:
             return render_template("error.html", variable = result_2,  data="Please check if your query is compatible with our system!")
         
-        print(result_2)
-
         print(type(result_2))
 
-        n = len(result_2.columns) 
-        if n==1:
-            return render_template("query.html", variable = result_2,  data=result_2.to_html(index=True,header=True)) #print(result)
-        else:
-            return render_template("query2.html", variable = result_2,  data=result_2.to_html(index=True,header=True)) #print(result)
+        
+        return render_template("tabletemplate.html", variable = result_2,  data=result_2.to_html(classes=["table-sm"], header = True))
+            #return render_template("query2.html", variable = result_2,  data=result_2.to_html(index=True,header=True))
 
-        return None
+        #return None
 
         
 """ if __name__ == "__main__":

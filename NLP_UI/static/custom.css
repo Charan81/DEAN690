@@ -1,0 +1,32 @@
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  margin-left: 28.5%;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 3rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+tr, th{
+  text-align: center;
+}
+
+#exportcsv {
+  margin-left: 5%;
+  position: absolute;
+  line-height: 0.75rem;
+}
+
+#goback{
+  margin-left: -9.5%;
+  position: absolute;
+  line-height: 0.75rem;
+}
