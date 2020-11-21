@@ -20,20 +20,25 @@ tr, th{
 }
 
 #exportcsv {
-  margin-left: -2%;
-  margin-top:-2.8%;
+  margin-left: -1.2rem;
+  margin-top: -2.2rem;
   position: absolute;
   line-height: 0.85rem;
 }
 
 #goback{
-  margin-left: -7.5%;
-  margin-top: -2.8%;
+  margin-left: -7rem;
+  margin-top: -2.2rem;
   position: absolute;
   line-height: 0.85rem;
 }
 
 .dropdown-menu { background-color: #FFFFFF; }
+
+.table-class{
+  width:135rem;
+  margin:0 auto;
+}
 
 
 /* Absolute Center Spinner */

@@ -1,7 +1,7 @@
 {
 	"select": {
-		"column": "cost",
-		"type": "['AVG']"
+		"column": "None",
+		"type": "[]"
 	},
 	"from": {
 		"table": "product"
@@ -10,10 +10,10 @@
 	},
 	"where": {
 		"condition": [
-			{ "column": "vendor_country",
+			{ "column": "cost",
 			  "type": "None",
-			  "operator": "=",
-			  "value": "'chn'"
+			  "operator": ">",
+			  "value": "'100'"
 			}
 		]
 	},

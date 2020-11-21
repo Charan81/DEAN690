@@ -16,7 +16,7 @@ function downloadCSV(csv, filename) {
 function exportTableToCSV() {
     $('table').stickyTableHeaders('destroy');
 
-    filename = 'procurement' + '-' + Math.round(Date.now() / 1000)
+    filename = 'procurement' + '-' + Math.round(Date.now() / 1000) + '.csv'
     var csv = [];
     var rows = document.querySelectorAll("table tr");
     
