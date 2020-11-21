@@ -20,15 +20,17 @@ tr, th{
 }
 
 #exportcsv {
-  margin-left: 5%;
+  margin-left: -2%;
+  margin-top:-2.8%;
   position: absolute;
-  line-height: 0.75rem;
+  line-height: 0.85rem;
 }
 
 #goback{
-  margin-left: -9.5%;
+  margin-left: -7.5%;
+  margin-top: -2.8%;
   position: absolute;
-  line-height: 0.75rem;
+  line-height: 0.85rem;
 }
 
 .dropdown-menu { background-color: #FFFFFF; }

@@ -30,9 +30,13 @@ def query():
         
         print(type(result_2))
 
+        print(result_2)
         
-        return render_template("tabletemplate.html", variable = result_2,  data=result_2.to_html(classes=["table-sm"], header = True))
-            #return render_template("query2.html", variable = result_2,  data=result_2.to_html(index=True,header=True))
+        n = len(result_2.columns)
+        if n==1:
+            return render_template("error.html", variable = result_2,  data=result_2.to_html(index=True,header=True))
+        else:
+            return render_template("tabletemplate.html", variable = result_2,  data=result_2.to_html(classes=["table-sm"],header=True) , query = name)
 
         #return None
 

@@ -22,9 +22,10 @@
         <hr style="width:14%;margin-top: 0%;">
     </div>
     <br/>
+    <div>Query results for {{ query }} </div><br/>
+    <br/>
     <button type="button-inline" class="btn btn-outline-primary" id="goback" onclick="window.history.back()">Back</button>
     <button type="button-inline" class="btn btn-outline-primary" id="exportcsv" onclick="exportTableToCSV()">Export to CSV</button>
-    <div>Query Results</div><br/>
     <div class="table-class">
         {{ data|safe }}
     </div>
