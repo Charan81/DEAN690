@@ -30,3 +30,5 @@ tr, th{
   position: absolute;
   line-height: 0.75rem;
 }
+
+.dropdown-menu { background-color: #FFFFFF; }

@@ -25,17 +25,106 @@
     <form class="form-signin" action="/query" method="POST">
     <div class="form-group has-search">
     <span class="fa fa-search form-control-feedback"></span>
-    <input class="form-control" type="text" style ="margin-top: 14%; margin-left: 28%; width:50%; height:50px;border-radius: 100px;padding: 0 45px;box-shadow: 0 2px 4px var(--c-darker-1);" placeholder="Input your query" name='name' required><br/>
+    <input class="form-control" type="text" style ="margin-top: 14%; margin-left: 28%; width:50%; height:50px;border-radius: 100px;padding: 0 45px;box-shadow: 0 2px 4px var(--c-darker-1);" placeholder="Input your query" name='name' required>
     </div>
       <div class ="customRadioGroup" style="text-align: center;">
-        <label class="radio-inline"><input type="radio" name="optradio" checked> Simple Query </label>
-        <label class="radio-inline"><input type="radio" name="optradio"> Custom Query </label>
+        <label class="radio-inline"><input type="radio" name="optradio" id ="simpleRadio" checked> Simple </label>
+        <label class="radio-inline"><input type="radio" name="optradio" id="customRadio" > Custom </label>
       </div>
-      <input type="submit" style="display:none"/>
+      <div class ="customMenuGroup" id = "customMenu" style="margin-left: 7%; display: none;">
+        <div class="btn-group dropup">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Query Type
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Show me all</a>
+                <a class="dropdown-item" href="#">What is the average of</a>
+                <a class="dropdown-item" href="#">What is the total of </a>
+                <a class="dropdown-item" href="#">Count how many</a>
+            </div>
+          </div>
+        
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Fields
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">cost</a>
+                <a class="dropdown-item" href="#">business_unit</a>
+                <a class="dropdown-item" href="#">psc_code</a>
+                <a class="dropdown-item" href="#">obj_code</a>
+                <a class="dropdown-item" href="#">sub_obj_code</a>
+                <a class="dropdown-item" href="#">order_date</a>
+                <a class="dropdown-item" href="#">order_title</a>
+                <a class="dropdown-item" href="#">line_description</a>
+                <a class="dropdown-item" href="#">vendor_name</a>
+                <a class="dropdown-item" href="#">vendor_country</a>
+              </div>
+          </div>
+
+          <label class="inline">where</label>
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Fields
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">cost</a>
+                <a class="dropdown-item" href="#">business_unit</a>
+                <a class="dropdown-item" href="#">psc_code</a>
+                <a class="dropdown-item" href="#">obj_code</a>
+                <a class="dropdown-item" href="#">sub_obj_code</a>
+                <a class="dropdown-item" href="#">order_date</a>
+                <a class="dropdown-item" href="#">order_title</a>
+                <a class="dropdown-item" href="#">line_description</a>
+                <a class="dropdown-item" href="#">vendor_name</a>
+                <a class="dropdown-item" href="#">vendor_country</a>
+              </div>
+          </div>
+
+          <div class="btn-group dropup">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+              Operation
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">is equal to</a>
+              <a class="dropdown-item" href="#">is not equal to</a>
+              <a class="dropdown-item" href="#">is like</a>
+              <a class="dropdown-item" href="#">is not like</a>
+              <a class="dropdown-item" href="#">is greater than</a>
+              <a class="dropdown-item" href="#">is less than</a>
+              <a class="dropdown-item" href="#">is in</a>
+              <a class="dropdown-item" href="#">is not in</a>
+            </div>
+          </div>
+
+          <input type="text" class="col-md-1" placeholder="criteria" id="criteria" style="line-height: 2rem;">
+          <label class="inline">group by</label>
+
+          <div class="btn-group dropup">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fields
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">cost</a>
+              <a class="dropdown-item" href="#">business_unit</a>
+              <a class="dropdown-item" href="#">psc_code</a>
+              <a class="dropdown-item" href="#">obj_code</a>
+              <a class="dropdown-item" href="#">sub_obj_code</a>
+              <a class="dropdown-item" href="#">order_date</a>
+              <a class="dropdown-item" href="#">order_title</a>
+              <a class="dropdown-item" href="#">line_description</a>
+              <a class="dropdown-item" href="#">vendor_name</a>
+              <a class="dropdown-item" href="#">vendor_country</a>
+            </div>
+          </div>
+   
+      </div>
+      <input type="submit" style="display:block; margin-left: 49%; margin-top: 1%;" value="Search"/>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script  src="/static/script.js" ></script>
   </body>
 </html>
