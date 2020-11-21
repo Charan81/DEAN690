@@ -9,7 +9,9 @@ $("#customRadio").click(function () {
 });
 
 $("#submitButton").click(function () {
-    $('#loader').show();
+    if(document.getElementById("searchQuery").value.length != 0){
+        $('#loader').show();
+    }
 });
 
 
