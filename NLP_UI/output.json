@@ -1,7 +1,7 @@
 {
 	"select": {
-		"column": "None",
-		"type": "[]"
+		"column": "cost",
+		"type": "['AVG']"
 	},
 	"from": {
 		"table": "product"
@@ -9,6 +9,13 @@
 	"join": {
 	},
 	"where": {
+		"condition": [
+			{ "column": "vendor_country",
+			  "type": "None",
+			  "operator": "=",
+			  "value": "'chn'"
+			}
+		]
 	},
 	"group_by": {
 	},

@@ -32,9 +32,14 @@ def query():
 
         print(result_2)
         
-        n = len(result_2.columns)
-        if n==1:
-            return render_template("error.html", variable = result_2,  data=result_2.to_html(index=True,header=True))
+        numberOfColumns = len(result_2.columns)
+        if numberOfColumns == 1:
+            if result_2[' '].iloc[0] is not None:
+                splitValue = str(round(result_2[' '].iloc[0], 2))
+            else:
+                splitValue = 'None'
+            print(splitValue)
+            return render_template("singlevaluetemplate.html", variable = result_2,  data=splitValue, query = name)
         else:
             return render_template("tabletemplate.html", variable = result_2,  data=result_2.to_html(classes=["table-sm"],header=True) , query = name)
 
