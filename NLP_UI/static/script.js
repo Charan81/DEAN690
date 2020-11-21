@@ -8,4 +8,10 @@ $("#customRadio").click(function () {
     $('#customMenu').show();
 });
 
+$("#submitButton").click(function () {
+    $('#loader').show();
+});
+
+
+
 
