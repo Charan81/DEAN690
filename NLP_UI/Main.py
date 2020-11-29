@@ -17,30 +17,37 @@ def home():
 
 @app.route("/query",methods=['GET','POST'])
 def query():
-    if request.method=='POST':
-       
-        name = request.form['name']
+    
+    try:
+        if request.method=='POST':
+           
+            name = request.form['name']
 
-        resultSet = processquery.Process(name) 
+            resultSet = processquery.Process(name) 
 
-        if resultSet is None:
-            return render_template("error.html", variable = resultSet,  data="Please check if your query is compatible with our system!")
-        
-        numberOfColumns = len(resultSet.columns)
-        if numberOfColumns == 1:
-            if resultSet[' '].iloc[0] is not None:
-                splitValue = str(round(resultSet[' '].iloc[0], 2))
+            if resultSet is None:
+                return render_template("error.html", variable = resultSet,  data="Please check if your query is compatible with our system!")
+            
+            numberOfColumns = len(resultSet.columns)
+            print("number of cols: " + str(numberOfColumns))
+            if numberOfColumns == 1:
+                if resultSet[' '].iloc[0] is not None:
+                    splitValue = str(round(resultSet[' '].iloc[0], 2))
+                else:
+                    splitValue = 'None'
+                return render_template("singlevaluetemplate.html", variable = resultSet,  data=splitValue, query = name)
             else:
-                splitValue = 'None'
-            return render_template("singlevaluetemplate.html", variable = resultSet,  data=splitValue, query = name)
-        else:
-            return render_template("tabletemplate.html", variable = resultSet,  data=resultSet.to_html(classes=["table-sm"],header=True) , query = name)
+                return render_template("tabletemplate.html", variable = resultSet,  data=resultSet.to_html(classes=["table table-bordered table-striped text-center"],header=True) , query = name)
 
-        return None
+            return render_template("error.html", variable = resultSet,  data="Oops! We encountered an error! Please give us some time to fix it!")
+            
+    except Exception as ex:
+        print(ex)
+        return render_template("error.html", variable = resultSet,  data="Oops! Please check if your query is compatible with our system while we look into the logs for details!")
 
         
-""" if __name__ == "__main__":
-    app.run() """
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
 
 
   

@@ -27,7 +27,7 @@ tr, th{
 }
 
 #goback{
-  margin-left: -7rem;
+  margin-left: -7rem;;
   margin-top: -2.2rem;
   position: absolute;
   line-height: 0.85rem;
@@ -35,12 +35,15 @@ tr, th{
 
 .dropdown-menu { background-color: #FFFFFF; }
 
-.table-class{
-  width:135rem;
-  margin:0 auto;
+.table-class {
+	margin: auto;
+    width: 50% !important;
 }
 
-
+.list-group-item {
+	background-color:transparent;
+	
+}
 /* Absolute Center Spinner */
 .loading {
   position: fixed;

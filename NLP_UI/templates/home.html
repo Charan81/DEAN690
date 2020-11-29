@@ -16,7 +16,7 @@
 
   </head>
 
-  <body class="text-center" style="background-color:#D2B48C;">
+  <body class="text-center" style="background-color:#11619c;color:#ffffff">
     <div class="logo" style="font-family: Rajdhani, sans-serif;">
         <h1>Procurement</h1>
         <h3>Searchbar</h3>
@@ -59,6 +59,7 @@
                 <a class="dropdown-item" href="#">line_description</a>
                 <a class="dropdown-item" href="#">vendor_name</a>
                 <a class="dropdown-item" href="#">vendor_country</a>
+				<a class="dropdown-item" href="#">quarter</a>
               </div>
           </div>
 
@@ -78,6 +79,7 @@
                 <a class="dropdown-item" href="#">line_description</a>
                 <a class="dropdown-item" href="#">vendor_name</a>
                 <a class="dropdown-item" href="#">vendor_country</a>
+				<a class="dropdown-item" href="#">quarter</a>
               </div>
           </div>
 
@@ -115,15 +117,16 @@
               <a class="dropdown-item" href="#">line_description</a>
               <a class="dropdown-item" href="#">vendor_name</a>
               <a class="dropdown-item" href="#">vendor_country</a>
+			  <a class="dropdown-item" href="#">quarter</a>
             </div>
           </div>
    
       </div>
-      <input type="submit" style="display:block; margin-left: 48%; margin-top: 1%;" value="Search" id="submitButton"/><br><br>
-      <div id="accordion" style="width: 86rem; margin:0 auto;">
-        <div class="card" style="width: 30rem;float: right; margin-right: 32%;">
+      <input type="submit" class ="btn btn-light" style="display:block; margin-left: 48%; margin-top: 1%;" value="Search" id="submitButton"/><br><br>
+      <div id="accordion" style="width:86rem; margin:0 auto;">
+        <div class="card" style="width: 30rem;float: right; margin-right: 32%;background-color:transparent;">
           <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#queryCollapse">
+            <a class="card-link" data-toggle="collapse" href="#queryCollapse" style="color:#ffffff">
               Query Suggestions
             </a>
           </div>
@@ -131,35 +134,51 @@
             <div class="container">
                 <div class="table-responsive">          
                     <table class="table">
-                      <thead>
+                      <thead style="border-style : hidden!important;">
                         <tr>
-                          <th>What is the average cost of product whose  vendor_country is chn?</th>
-                        </tr>
-                        <tr>
-                          <th>What is the average cost of product where business_unit is jerus?</th>
-                        </tr>
-                        <tr>
-                          <th>What is the average cost of product where vendor_country is chn and business_unit is teguc?</th>
-                        </tr>
-                        <tr>
-                          <th>List all records data where product cost is greater than 100</th>
-                        </tr>
-                        <tr>
-                          <th>What is the average cost of product where order_date is more than '20191101'</th>
-                        </tr>
-                        <tr>
-                          <th>What is the sum of cost in product where vendor_country is chn? </th>
-                        </tr>
-                        <tr>
-                          <th>List all records in product where cost is less than 100 group vendor_country </th>
-                        </tr>
-                        <tr>
-                          <th>List all records in product where cost is less than 100 where vendor_country is Dallas </th>
-                        </tr>
-                        <tr>
-                          <th>List sum of cost in product where vendor_name like staples group vendor_country </th>
-                        </tr>
+						  <th scope="col">Type</th>
+						  <th scope="col">Query</th>
+						</tr>
                       </thead>
+					  <tr>
+						  <td style="border-style : hidden!important;">List</td>
+						  <td style="border-style : hidden!important;">
+						  <ul class="list-group">
+							  <li class="list-group-item">List all records in data where cost is greater than 100 </li>
+							  <li class="list-group-item">List all records in data where cost is less than 100 group vendor_country </li>
+							  <li class="list-group-item">List all records in data where cost is less than 100 where vendor_country is usa </li>
+						  </ul>
+						  </td>
+					 </tr>
+					 <tr>
+						  <td style="border-style : hidden!important;">Aggregate</td>
+						  <td style="border-style : hidden!important;">
+						  <ul class="list-group">
+							  <li class="list-group-item">What is the average cost of data whose vendor_country is chn? </li>
+							  <li class="list-group-item">What is the average cost of data where business_unit is jerus? </li>
+							  <li class="list-group-item">What is the average cost of data where vendor_country is chn and business_unit is teguc? </li>
+							  <li class="list-group-item">What is the sum of cost in data where vendor_country is chn? </li>
+						 </ul>
+						  </td>
+					 </tr>
+					 <tr>
+						  <td style="border-style : hidden!important;">Group</td>
+						  <td style="border-style : hidden!important;">
+						  <ul class="list-group">
+							  <li class="list-group-item">List psc_code, sum of cost in data where cost less than 100 group psc_code </li>
+							  <li class="list-group-item">List psc_code, average cost in data where cost is less than 100 group vendor_country order by cost </li>
+						  </ul>
+						  </td>
+					 </tr>
+					 <tr>
+						  <td style="border-style : hidden!important;">Quarterly</td>
+						  <td style="border-style : hidden!important;">
+						  <ul class="list-group">
+							  <li class="list-group-item">List all records in data where quarter is 1 (It can any - 1/2/3/4 quarters) </li>
+							  <li class="list-group-item">List all records in data where year is 2019 (It can be 2019 or 2020) </li>
+						  </ul>
+						  </td>
+					 </tr>
                     </table>
                 </div>
           </div>

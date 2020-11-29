@@ -20,18 +20,20 @@ SET time_zone = "+00:00";
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE `data` (
   `id` int(11) NOT NULL,
   `business_unit` varchar(4000) DEFAULT NULL,
   `psc_code` varchar(100) DEFAULT NULL,
   `obj_code` varchar(100) DEFAULT NULL,
   `sub_obj_descr` varchar(4000) DEFAULT NULL,
   `order_date` DATETIME,
-  'order_title' varchar(4000) DEFAULT NULL,
-  'line_description' varchar(4000) DEFAULT NULL,
+  `order_title` varchar(4000) DEFAULT NULL,
+  `line_description` varchar(4000) DEFAULT NULL,
   `vendor_name` varchar(400) DEFAULT NULL,
   `vendor_country` varchar(400) DEFAULT NULL,
-  `cost` float NOT NULL
+  `cost` float NOT NULL,
+  `quarter` int(11) NOT NULL,
+  `year` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -45,5 +47,5 @@ CREATE TABLE `product` (
 --
 -- Indexes for table `product`
 --
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `data`
+  ADD PRIMARY KEY (`id`);

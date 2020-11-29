@@ -15,7 +15,7 @@
     
   </head>
 
-  <body class="text-center" style="background-color:#D2B48C;">
+  <body class="text-center" style="background-color:#11619c;color:#ffffff">
     <div class="logo" style="font-family: Rajdhani, sans-serif;">
         <h1>Procurement</h1>
         <h3>Searchbar</h3>
@@ -24,11 +24,11 @@
     <br/>
     <div>Query results for {{ query }} </div><br/>
     <br/>
-    <button type="button-inline" class="btn btn-outline-primary" id="goback" onclick="window.history.back()">Back</button>
-    <button type="button-inline" class="btn btn-outline-primary" id="exportcsv" onclick="exportTableToCSV()">Export to CSV</button>
-    <div class="table-class">
-        {{ data|safe }}
-    </div>
+    <button type="button-inline" class="btn btn-light" id="goback" onclick="window.history.back()">Back</button>
+    <button type="button-inline" class="btn btn-light" id="exportcsv" onclick="exportTableToCSV()">Export to CSV</button>
+	<div id="procurement" class="table-responsive">
+		{{ data|safe }}
+	</div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

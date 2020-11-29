@@ -6,12 +6,13 @@ import pandas as pd
 import sqlite3
 import sys
 import shlex
+import json
 
 def Process(searchQuery):
 
     resultDataframe = None
     searchQuery = '\"' + searchQuery + '\"'
-    string_in_string = 'python -m ln2sql.main -d database_store/product.sql -l lang_store/english.csv -j output.json -i {} '.format(searchQuery)
+    string_in_string = 'python3 -m ln2sql.main -d database_store/data.sql -l lang_store/english.csv -j output.json -i {} '.format(searchQuery)
 
     subprocessCommand = shlex.split(string_in_string)
     print(subprocessCommand)
@@ -40,6 +41,13 @@ def SqlProcessing(output):
         crsr = connection.cursor() 
         crsr.execute(sql_query)  #new_sql_call
         
+        names = list(map(lambda x: x[0], crsr.description))
+        print(names)
+        
+        columnsDict = {}
+        for index in range(len(names)):
+            columnsDict[index] = names[index]
+            
         # store all the fetched data in the ans variable 
         ans = crsr.fetchall()  
         
@@ -51,12 +59,18 @@ def SqlProcessing(output):
         ##################### Data Frame #######################
 
         df = pd.DataFrame(ans)
+        #print(df)
         ################## Add Column Names #####################
-        
-        if len(df.columns) == 1:
+        totalColmns = len(df.columns)
+
+        if totalColmns == 1:
             df_new = df.rename(columns={0: ' '})
         else :
-            df_new = df.rename(columns={0:'ID', 1 : 'business_unit', 2:'psc_code', 3:'obj_code', 4:'sub_obj_descr', 5:'order_date',6:'order_title',7:'line_description',8:'vendor_name',9:'vendor_country',10:'cost'})
+            #df_new = df.rename(columns={0:'ID', 1 : 'business_unit', 2:'psc_code', 3:'obj_code', 4:'sub_obj_descr', 5:'order_date',6:'order_title',7:'line_description',8:'vendor_name',9:'vendor_country',10:'cost',11:'quarter',12:'year'})
+            df_new = df.rename(columns=columnsDict)
+            if totalColmns > 10:
+                df_new.drop(columns=["quarter","year"], inplace=True)
+            
         
         #########################################################
         return df_new
